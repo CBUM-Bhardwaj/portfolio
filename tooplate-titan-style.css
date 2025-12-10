@@ -1782,3 +1782,65 @@ footer {
     outline: 2px solid var(--accent-blue);
     outline-offset: 2px;
 }
+
+/*  ||--------------------------------------------------------------------------------|| */
+/*  ||                                      blur                                      || */
+/*  ||--------------------------------------------------------------------------------|| */
+.blur-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Blur ALL content inside */
+.blur-card .blur-content {
+    filter: blur(18px);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Dark overlay */
+.blur-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+}
+
+/* Coming soon text */
+.blur-card::after {
+    content: "Coming Soon";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ! ||--------------------------------------------------------------------------------|| */
+/* ! ||                                     Contact                                    || */
+/* ! ||--------------------------------------------------------------------------------|| */
+
+.contact-links a {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.contact-links a:hover {
+    background: rgba(118, 169, 250, 0.15);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    transform: translateY(-3px);
+}
